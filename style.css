@@ -24,7 +24,7 @@ body {
     /* grid-template-rows: max-content;
     grid-template-columns: 1fr 0.8fr 100px;
     grid-template-areas: "logo nav search"; */
-    grid-template: "logo nav search" max-content / 1fr 0.8fr 100px;
+    grid-template: ". logo nav search" max-content / 2fr 1fr 2.5fr 0.5fr;
     align-items: center;
     justify-items: start;
     padding: 20px 0;
@@ -44,10 +44,10 @@ body {
 
 .header__logo-wrapper {
     grid-area: logo;
-    justify-self: end;
 }
 .header__nav {
     grid-area: nav;
+    transform: translate(-15px);
 }
 
 .header__nav ul {
@@ -242,4 +242,122 @@ body {
 .slider-dots__nav-item--active {
     background-color: transparent;
     border: 1px solid white;
+}
+
+/* FRESHY */
+
+.freshy {
+    grid-area: freshy;
+    background-color: #cbe77e;
+
+}
+
+.common {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 30px;
+    padding: 30px;
+}
+.title {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 24px;
+    width: 140px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.title span {
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.title span::first-line {
+    font-weight: 900;
+}
+
+.common__desc {
+    max-width: 60%;
+    hyphens: auto;
+}
+
+/* HEALTHY */
+
+.healthy {
+    grid-area: healthy;
+    background-color: #eb564f;
+    padding-bottom: 60px;
+}
+
+.common--col--rev {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+
+}
+
+.common--col--rev .common__desc{
+    max-width: 140px;
+
+    
+}
+
+/* THIRSTY */
+
+.thirsty {
+    grid-area: thirsty;
+    background-color: #ffba4a;
+}
+
+.common--row--rev {
+    flex-direction: row-reverse;
+}
+
+.common--row--rev .common__desc {
+    text-align: right;
+}
+
+.thirsty .common__desc {
+    max-width: 200px;
+}
+
+/* ORANGE */
+
+.orange {
+    grid-area: orange;
+    position: relative;
+}
+
+.orange img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+}
+
+.orange__btn-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orange__arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: 0.2 opacity ;
+}
+
+.orange__arrow:hover {
+    opacity: 0.8;
+}
+
+.orange__arrow:active {
+    opacity: 0.6;
 }
