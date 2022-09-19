@@ -361,3 +361,137 @@ body {
 .orange__arrow:active {
     opacity: 0.6;
 }
+
+.wrapper-down {
+    display: grid;
+    /* grid-template-columns: 4.5fr, 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "footer sidebar"; */
+    grid-template: "footer sidebar" 1fr / 4.5fr 1.5fr;
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    background-color: #2f2f2f;
+    color: #fff;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1.5fr 1 fr;
+    grid-template-rows: max-content 100px;
+    grid-template-areas: ". socials form logo"
+                        ". . . copy";
+    padding-top: 80px;
+    align-items: end;
+    align-content: center;
+}
+
+.socials {
+    grid-area: socials;
+    display: flex;
+    gap: 10px;
+}
+
+.socials__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.socials__link {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s opacity;
+}
+
+.socials__link:hover {
+    opacity: 0.8;
+}
+
+.socials__link:active {
+    opacity: 0.6;
+}
+
+.form {
+    grid-area: form;
+    text-transform: uppercase;
+}
+
+.form__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+
+}
+
+.form__row{
+    display: flex;
+}
+
+.form__input {
+    height: 40px;
+    width: 200px;
+    padding: 0 20px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.892);
+    text-transform: uppercase;
+}
+
+.form__input:focus {
+    background-color: rgba(255, 255, 255);
+}
+
+.form__submit-btn {
+    background-color: #54b9b4;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.2;
+}
+
+.form__submit-btn:hover {
+    background-color: #79cac6;
+}
+
+.form__submit-btn:active {
+    background-color: #47b8b2;
+}
+
+.footer__logo {
+    grid-area: logo;
+}
+
+.logo-img {
+    justify-self: center;
+}
+
+
+.copy {
+    grid-area: copy;
+    color: #6a6a6a;
+    align-self: center;
+    justify-self: center;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #54b9b4;
+}
+
+.btn--rounded {
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.sidebar .btn {
+    margin-top: 20px;
+}
