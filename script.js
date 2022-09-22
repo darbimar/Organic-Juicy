@@ -48,26 +48,26 @@ console.log(sliderDots);
 
 const dots = [];
 
-for (let i = 0; i < slidesDots.length; i++) {
+for (let i = 0; i < slidesDots.length; i++) {                // Количество точек соответствует чисул слайдов
     const dot = document.createElement('button');
     dot.dataset.slideTo = i;
-    dot.classList.add('slider-dots__nav-item');
+    dot.classList.add('slider-dots__nav-item');              //Добавили точки (присвоили переменной dot атрибут)
     if (i == 0) {
-        dot.classList.add('slider-dots__nav-item--active');
+        dot.classList.add('slider-dots__nav-item--active');   //На первом слайде активна первая кнопка
     }
     if (i != 0) {
-        slidesDots[i].style.display = 'none';
+        slidesDots[i].style.display = 'none';                  // Скрываем все слайды, кроме первого
     }
-    dot.addEventListener('click', showSlideDots);
-    wrapperDots.append(dot);
+    dot.addEventListener('click', showSlideDots);             //Запуск функции при клике
+    wrapperDots.append(dot);                                // Добавление точек
     dots.push(dot);
 }
 
 function showSlideDots(e) {
-    const slideTo = e.target.dataset.slideTo;
-    slidesDots.forEach(item => item.style.display = 'none');
-    slidesDots[slideTo].style.display = 'block';
-    dots.forEach(dot => dot.classList.remove('slider-dots__nav-item--active'));
-    e.target.classList.add('slider-dots__nav-item--active');
+    const slideTo = e.target.dataset.slideTo;               //Получение дата-атрибута для каждой точки
+    slidesDots.forEach(item => item.style.display = 'none');  //Скрыть все слайды при нажатии
+    slidesDots[slideTo].style.display = 'block';              //Показ слайда выбранной точки
+    dots.forEach(dot => dot.classList.remove('slider-dots__nav-item--active')); //Убираем класс активности у всех точек
+    e.target.classList.add('slider-dots__nav-item--active');     //Добавляем класс активности на точку, на которую кликнули
 }
 
